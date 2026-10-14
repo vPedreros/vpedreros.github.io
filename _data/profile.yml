@@ -6,45 +6,38 @@
 # =====================================================
 
 # --- Identity ---
-name: "Sung-Min Park"
-name_ko: "박성민"
-avatar: /assets/img/common/avatar.jpg
+name: "Vicente K. Pedreros Aballay"
+avatar: /assets/img/common/conceps.jpeg
 
 # --- Affiliation ---
-program: "Integrated MS-PhD Program in Physics"
-institution: "Korea Advanced Institute of Science and Technology (KAIST)"
-status: "Currently on academic leave for military service as a Military Science and Technology Soldier"
+program: "PhD in Astrophysics"
+institution: "Queensland University of Technology (QUT)"
+status: "On my first year"
 
 # --- Contact ---
-email: "sungmin.park@kaist.ac.kr"
+email: "vicente.pedreros@hdr.qut.edu.au"
 cv_url: "/assets/files/CV.pdf"
 
 # --- Social Links ---
 social:
-  github: "https://github.com/sungmin-park-dev"
-  linkedin: "https://www.linkedin.com/in/smpark-works"
-  # instagram: "https://www.instagram.com/parksm0226"  # uncomment if needed
+  github: "https://github.com/vpedreros"
+  last.fm: "https://www.last.fm/user/vpedreros"
 
 # --- Research Interests ---
 research:
   physics:
-    - "Tensor Networks: Efficient representations of quantum many-body states"
-    - "Neural Network States: Machine learning approaches to quantum many-body problems"
-    - "Quantum Computing & Quantum Information: Computational aspects of quantum systems"
-  ml:
-    - "Physics-Informed Deep Learning: Applying ML techniques to solve physics problems"
-    - "Quantum Machine Learning: Quantum algorithms for machine learning tasks"
-    - "Computational Methods: Developing efficient algorithms for complex systems"
+    - "Cosmology: Large-scale structure, Dark energy, Modified gravity"
+    - "Computation: CLASS, N-body simulations, emulators, HPC"
 
 # --- Publications ---
-publications:
-  - title: "Geometric additivity of the modular commutator for multipartite entanglement"
-    authors: "Sung-Min Park, Isaac H. Kim, and Eun-Gook Moon"
-    venue: "Physical Review B 111, 075167"
-    year: "2025"
-    url: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167"
-  - title: "Spin-orbit-induced Instability and Finite-Temperature Stabilization of a Triangular-lattice Supersolid"
-    authors: "Seongjun Park, Sung-Min Park, Yun-Tak Oh, Hyun-Yong Lee, and Eun-Gook Moon"
-    venue: "arXiv:2601.20963"
-    year: "2026"
-    url: "https://arxiv.org/abs/2601.20963"
+# publications:
+#   - title: "Geometric additivity of the modular commutator for multipartite entanglement"
+#     authors: "Sung-Min Park, Isaac H. Kim, and Eun-Gook Moon"
+#     venue: "Physical Review B 111, 075167"
+#     year: "2025"
+#     url: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167"
+#   - title: "Spin-orbit-induced Instability and Finite-Temperature Stabilization of a Triangular-lattice Supersolid"
+#     authors: "Seongjun Park, Sung-Min Park, Yun-Tak Oh, Hyun-Yong Lee, and Eun-Gook Moon"
+#     venue: "arXiv:2601.20963"
+#     year: "2026"
+#     url: "https://arxiv.org/abs/2601.20963"

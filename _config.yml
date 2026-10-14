@@ -11,18 +11,18 @@
 # ===========================================================================
 
 lang: en # Options: 'en' (English), 'ko' or 'ko-KR' (Korean) etc.
-timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
+timezone: Brisbane/Australia # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 
 # ===========================================================================
 # 2. Page Structure & Content (How Your Site Looks)
 # ===========================================================================
 
-title: "Sung-Min Park"
-tagline: "quantum many-body · tensor networks · physics-informed ML"
-author: "Sung-Min Park"
+title: "Vicente K. Pedreros Aballay"
+tagline: "cosmology · simulations · dark energy · modified gravity"
+author: "Vicente K. Pedreros Aballay"
 description: >-
-  sharing a journey of quantum study and project experiences
-url: "https://sungmin-park-dev.github.io"
+  I am Vicente (not Vincent!), a late-time cosmologist interested in studying the large-scale structure of the Universe. My research focuses on understanding the accelerated expansion of the universe, and its connection to modified theories of gravity. Currently at QUT for my PhD in Astrophysics.
+url: "https://vpedreros.github.io"
 toc: true
 baseurl: ""
 
@@ -32,14 +32,13 @@ baseurl: ""
 
 # GitHub integration
 github:
-  username: sungmin-park-dev
+  username: vpedreros
 
 # Social profile information (used for SEO/structured data — see _data/profile.yml for site UI)
 social:
-  name: Sung-Min Park
+  name: Vicente K. Pedreros Aballay
   links:
-    - https://github.com/sungmin-park-dev
-    - https://www.linkedin.com/in/smpark-works
+    - https://github.com/vpedreros
 
 # =========================
 # 4. External Services & SEO (Configure these later when needed)
