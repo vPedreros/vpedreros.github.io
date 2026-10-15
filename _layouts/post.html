@@ -61,9 +61,9 @@ layout: base
       <a href="/" class="breadcrumb-item">Home</a>
       <span class="breadcrumb-separator" aria-hidden="true">›</span>
       {% if page.collection == "projects" %}
-        <a href="/#project-index" class="breadcrumb-item">projects</a>
+        <a href="/" class="breadcrumb-item">Projects</a>
       {% else %}
-        <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root }}</a>
+        <a href="/{{ collection_root }}/" class="breadcrumb-item">{{ collection_root | capitalize }}</a>
       {% endif %}
       {% if url_parts.size > 2 %}
         <span class="breadcrumb-separator" aria-hidden="true">›</span>
