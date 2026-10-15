@@ -2,9 +2,7 @@
 
 ## Current Baseline
 
-Jekyll portfolio site for `sungmin-park-dev.github.io`, implemented with the custom `emergence` design system. GitHub Pages deployment is handled by GitHub Actions, not by a theme gem or direct Pages source build.
-
-**Repo family note:** this portfolio is one of four related repos. Its public design system is `sungmin-park-dev/glacier-stellar` (renamed from `emergence-theme`, moved out of the `emergence-project` org) — design/CSS fixes made here port there, since both are Jekyll. `emergence-project/emergence` is an unrelated private Quartz-based knowledge garden (the org's actual namesake project), and `sungmin-park-dev/project-emergence` is an unrelated private research-paper-tracking tool. Nothing here applies to those two (different stacks, different purposes). See `~/GitHub/emergence/AGENTS.md` for the fuller map if working across repos.
+Jekyll portfolio site for `vpedreros.github.io`, implemented with the custom `emergence` design system. GitHub Pages deployment is handled by GitHub Actions, not by a theme gem or direct Pages source build.
 
 - Runtime: Ruby 3.3.6, Gemfile constraint `jekyll ~> 4.3`, currently locked to Jekyll 4.4.1.
 - Theme: Chirpy has been decoupled; do not reintroduce `jekyll-theme-chirpy`.
@@ -75,9 +73,9 @@ Important contracts:
 Local shell inside Codex may not put rbenv first, so prefer the explicit PATH form:
 
 ```bash
-PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH LANG=en_US.UTF-8 bundle exec jekyll build
-PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH LANG=en_US.UTF-8 bundle exec jekyll serve --livereload
-PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH bundle exec htmlproofer _site --disable-external
+LANG=en_US.UTF-8 bundle exec jekyll build
+LANG=en_US.UTF-8 bundle exec jekyll serve --livereload
+bundle exec htmlproofer _site --disable-external
 ```
 
 Deployment path:

@@ -1,13 +1,12 @@
-# Sung-Min Park — Portfolio
+# Vicente K. Pedreros Aballay — Portfolio
 
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.4-red.svg)](https://jekyllrb.com/)
-[![Ruby](https://img.shields.io/badge/Ruby-3.3.6-red.svg)](https://www.ruby-lang.org/)
+[![Ruby](https://img.shields.io/badge/Ruby-3.3-red.svg)](https://www.ruby-lang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-An image-led portfolio for quantum physics and machine learning research, built
-with Jekyll and the custom Emergence design system.
+Personal research portfolio focusing on cosmology, large-scale structure, and modified gravity, built with Jekyll and the Emergence design system.
 
-🔗 **Live Site**: [sungmin-park-dev.github.io](https://sungmin-park-dev.github.io)
+🔗 **Live Site**: [vpedreros.github.io](https://vpedreros.github.io)
 
 ---
 
@@ -40,7 +39,7 @@ and related content are separated by rules rather than cards.
 ## Project Structure
 
 ```
-sungmin-park-dev.github.io/
+vpedreros.github.io/
 ├── _layouts/               # HTML templates
 │   ├── base.html           # HTML shell (head, body)
 │   ├── custom-page.html    # Tab pages layout
@@ -82,8 +81,8 @@ sungmin-park-dev.github.io/
 ### Installation
 
 ```bash
-git clone https://github.com/sungmin-park-dev/sungmin-park-dev.github.io.git
-cd sungmin-park-dev.github.io
+git clone https://github.com/vPedreros/vpedreros.github.io.git
+cd vpedreros.github.io
 bundle install
 LANG=en_US.UTF-8 bundle exec jekyll serve --livereload
 ```
@@ -150,16 +149,13 @@ restoration instructions. They are excluded from the generated site.
 ## Build & Deploy
 
 ```bash
-# Local build (use the repository's Ruby version)
-PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH \
-LANG=en_US.UTF-8 \
-bundle exec jekyll build
+# Local build
+LANG=en_US.UTF-8 bundle exec jekyll build
 
 # Deploy: push to main branch → GitHub Actions auto-deploys
 git push origin main
 
 # HTML validation
-PATH=/Users/david/.rbenv/versions/3.3.6/bin:$PATH \
 bundle exec htmlproofer _site --disable-external
 ```
 

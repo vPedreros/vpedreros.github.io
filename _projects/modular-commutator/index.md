@@ -10,6 +10,7 @@ permalink: /projects/modular-commutator/
 order: 1
 status: completed
 project_type: physics
+published: false
 ---
 
 ## Overview

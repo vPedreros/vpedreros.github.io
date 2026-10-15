@@ -56,23 +56,19 @@
     {% unless page.no_site_footer %}
     {% assign p = site.data.profile %}
     <footer class="site-footer">
-      <span translate="no">&copy; Sung-Min Park</span>
-      {% if p.social.github or p.social.linkedin or p.email or p.social.instagram %}
+      <span translate="no">&copy; {{ site.data.profile.name | default: site.title }}</span>
+      {% if p.social.github or p.social.linkedin or p.email or p.social.instagram or p.social.lastfm or p.social.last_fm or p.social['last.fm'] %}
       <ul class="footer-social" aria-label="Social links">
         {% if p.social.github %}<li><a href="{{ p.social.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>{% endif %}
         {% if p.social.linkedin %}<li><a href="{{ p.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>{% endif %}
         {% if p.email %}<li><a href="mailto:{{ p.email }}" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>{% endif %}
+        {% if p.social.lastfm or p.social.last_fm or p.social['last.fm'] %}<li><a href="{{ p.social.lastfm | default: p.social.last_fm | default: p.social['last.fm'] }}" target="_blank" rel="noopener" aria-label="Last.fm"><i class="fab fa-lastfm" aria-hidden="true"></i></a></li>{% endif %}
         {% if p.social.instagram %}<li><a href="{{ p.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>{% endif %}
       </ul>
       {% endif %}
-      <span class="photo-credit photo-credit--light">
-        deep glacier:
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">Sung-Min Park / CC BY 4.0</a>
-      </span>
-      <span class="photo-credit photo-credit--dark">
-        stellar field:
-        <a href="https://unsplash.com/photos/blue-and-purple-galaxy-digital-wallpaper-E0AHdsENmDg" target="_blank" rel="noopener">Jeremy Thomas / Unsplash</a>
-      </span>
+      {% if p.photo_credit %}
+      <span class="photo-credit">{{ p.photo_credit }}</span>
+      {% endif %}
     </footer>
     {% endunless %}
 
@@ -175,7 +171,8 @@
             }
             if (logoSection) logoSection.hidden = !inContent;
             if (logo) {
-              logo.setAttribute('aria-label', inContent ? 'Sung-Min Park — projects' : 'Sung-Min Park home');
+              var ownerName = {{ site.data.profile.name | default: site.title | jsonify }};
+              logo.setAttribute('aria-label', inContent ? (ownerName + ' — projects') : (ownerName + ' home'));
             }
           };
           updateNavThreshold();

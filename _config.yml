@@ -11,7 +11,7 @@
 # ===========================================================================
 
 lang: en # Options: 'en' (English), 'ko' or 'ko-KR' (Korean) etc.
-timezone: Brisbane/Australia # Format: Area/City (e.g., Asia/Seoul, America/New_York)
+timezone: Australia/Brisbane # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 
 # ===========================================================================
 # 2. Page Structure & Content (How Your Site Looks)

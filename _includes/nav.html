@@ -3,20 +3,21 @@
   data-nav-context="{% if page.url == '/' %}hero{% else %}content{% endif %}"
   aria-label="Primary"
 >
+  {% assign nav_name = site.data.profile.name | default: site.title %}
   {% if page.collection == "projects" %}
-  <a href="/#project-index" class="logo" aria-label="Sung-Min Park — back to projects" translate="no">
-    <span class="logo__name">Sung-Min Park</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  <a href="/#project-index" class="logo" aria-label="{{ nav_name }} — back to projects" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>projects</span>
   </a>
   {% elsif page.url contains "/about" %}
-  <a href="/about/" class="logo" aria-label="Sung-Min Park — about" translate="no">
-    <span class="logo__name">Sung-Min Park</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>about</span>
+  <a href="/about/" class="logo" aria-label="{{ nav_name }} — about" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>about</span>
   </a>
   {% elsif page.url == "/" %}
-  <a href="/" class="logo" id="nav-logo" aria-label="Sung-Min Park home" translate="no">
-    <span class="logo__name">Sung-Min Park</span><span class="logo__section" id="logo-section" hidden><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  <a href="/" class="logo" id="nav-logo" aria-label="{{ nav_name }} home" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section" id="logo-section" hidden><span class="logo__sep" aria-hidden="true">|</span>projects</span>
   </a>
   {% else %}
-  <a href="/" class="logo" aria-label="Sung-Min Park home" translate="no">Sung-Min Park</a>
+  <a href="/" class="logo" aria-label="{{ nav_name }} home" translate="no">{{ nav_name }}</a>
   {% endif %}
   <div class="nav-links" id="primary-nav" translate="no">
     <a href="/#project-index" data-nav-section="projects"{% if page.collection == 'projects' %} class="active" aria-current="location"{% endif %}>projects</a>

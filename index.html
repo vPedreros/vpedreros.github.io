@@ -8,8 +8,8 @@ description: "Research implementations, and the software and design systems buil
 
 <main class="project-home" id="main-content">
   <header class="home-hero">
-    <h1 aria-label="Sung-Min Park" translate="no">Sung-Min Park</h1>
-    <p class="home-hero__tagline">a student of quantum matter, computation, and the spaces between</p>
+    <h1 aria-label="{{ site.data.profile.name | default: site.title }}" translate="no">{{ site.data.profile.name | default: site.title }}</h1>
+    <p class="home-hero__tagline">{{ site.tagline }}</p>
   </header>
 
   {% assign physics_projects = site.projects | where: 'project_type', 'physics' | sort: 'order' %}
@@ -40,7 +40,7 @@ description: "Research implementations, and the software and design systems buil
         id="physics-tab"
         data-target="physics-panel"
       >
-        <span class="project-tab__number" aria-hidden="true">01</span> quantum physics
+        <span class="project-tab__number" aria-hidden="true">01</span> astrophysics & cosmology
       </button>
       <button
         type="button"

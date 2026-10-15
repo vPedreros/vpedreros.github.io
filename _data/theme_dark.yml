@@ -45,7 +45,7 @@ shadow-tag-hover: "none"
 shadow-tag-active: "none"
 
 bg-image-fallback: "url('../img/common/Background.jpg')"
-bg-image: "image-set(url('../img/common/Background.avif') type('image/avif') 1x, url('../img/common/Background-3840.avif') type('image/avif') 2x, url('../img/common/Background-1920.webp') type('image/webp') 1x, url('../img/common/Background-3840.webp') type('image/webp') 2x)"
+bg-image: "url('../img/common/Background.jpg')"
 bg-color-page: "#05070B"
 bg-position: "center center"
 bg-position-mobile: "56% center"

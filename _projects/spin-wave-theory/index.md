@@ -10,6 +10,7 @@ permalink: /projects/spin-wave-theory/
 order: 2
 status: planned
 project_type: physics
+published: false
 sitemap: false
 ---
 

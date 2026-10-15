@@ -8,6 +8,7 @@ permalink: /projects/glacier-stellar/
 order: 5
 status: completed
 project_type: software
+published: false
 ---
 
 ## Overview

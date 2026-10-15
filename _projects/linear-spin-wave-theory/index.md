@@ -10,6 +10,7 @@ permalink: /projects/linear-spin-wave-theory/
 order: 6
 status: in-progress
 project_type: software
+published: false
 ---
 
 ## Overview
