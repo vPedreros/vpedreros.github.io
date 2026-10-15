@@ -20,7 +20,7 @@
   <a href="/" class="logo" aria-label="{{ nav_name }} Home" translate="no">{{ nav_name }}</a>
   {% endif %}
   <div class="nav-links" id="primary-nav" translate="no">
-    <a href="/#about" data-nav-section="about"{% if page.url == '/' or page.slug == 'about' %} class="active"{% endif %}>About</a>
+    <a href="/" data-nav-section="about"{% if page.url == '/' or page.slug == 'about' %} class="active"{% endif %}>About</a>
     <a href="/teaching/"{% if page.url contains '/teaching' or page.slug == 'teaching' %} class="active" aria-current="page"{% endif %}>Teaching</a>
     <a href="/conferences/"{% if page.url contains '/conferences' or page.slug == 'conferences' %} class="active" aria-current="page"{% endif %}>Conferences</a>
   </div>

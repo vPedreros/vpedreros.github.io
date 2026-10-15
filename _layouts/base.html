@@ -183,6 +183,12 @@
             updateNavThreshold();
             updateNavSurface();
           });
+          if (aboutLink && aboutSection) {
+            aboutLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              aboutSection.scrollIntoView({ behavior: 'smooth' });
+            });
+          }
         }
       })();
     </script>
