@@ -2,7 +2,7 @@
 title: Conferences
 layout: custom-page
 icon: fas fa-camera
-order: 2
+order: 3
 permalink: /conferences/
 slug: conferences
 description: "Photos and memories from academic conferences, workshops, and seasonal schools."

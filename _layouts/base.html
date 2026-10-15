@@ -140,8 +140,8 @@
         // The homepage rail starts as a light optical trace and strengthens
         // once the reader moves from the open environment into content.
         if (topNav && topNav.dataset.navContext === 'hero') {
-          var teachingSection = document.getElementById('teaching');
-          var teachingLink = topNav.querySelector('[data-nav-section="teaching"]');
+          var aboutSection = document.getElementById('about');
+          var aboutLink = topNav.querySelector('[data-nav-section="about"]');
           var logo = document.getElementById('nav-logo');
           var logoSection = document.getElementById('logo-section');
           var contentThreshold = 48;
@@ -152,8 +152,8 @@
               || 0;
           };
           var updateNavThreshold = function() {
-            if (!teachingSection) return;
-            contentThreshold = teachingSection.getBoundingClientRect().top
+            if (!aboutSection) return;
+            contentThreshold = aboutSection.getBoundingClientRect().top
               + getScrollTop()
               - topNav.offsetHeight
               - 24;
@@ -161,18 +161,18 @@
           var updateNavSurface = function() {
             var inContent = getScrollTop() >= contentThreshold;
             topNav.classList.toggle('top-nav--scrolled', inContent);
-            if (teachingLink) {
-              teachingLink.classList.toggle('active', inContent);
+            if (aboutLink) {
+              aboutLink.classList.toggle('active', inContent);
               if (inContent) {
-                teachingLink.setAttribute('aria-current', 'location');
+                aboutLink.setAttribute('aria-current', 'location');
               } else {
-                teachingLink.removeAttribute('aria-current');
+                aboutLink.removeAttribute('aria-current');
               }
             }
             if (logoSection) logoSection.hidden = !inContent;
             if (logo) {
               var ownerName = {{ site.data.profile.name | default: site.title | jsonify }};
-              logo.setAttribute('aria-label', inContent ? (ownerName + ' — Teaching') : (ownerName + ' Home'));
+              logo.setAttribute('aria-label', inContent ? (ownerName + ' — About') : (ownerName + ' Home'));
             }
           };
           updateNavThreshold();

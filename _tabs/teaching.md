@@ -2,7 +2,7 @@
 title: Teaching
 layout: custom-page
 icon: fas fa-chalkboard-teacher
-order: 1
+order: 2
 permalink: /teaching/
 slug: teaching
 description: "Course materials, auxiliary lecture guides, evaluations, and teaching archives from Universidad de Chile."

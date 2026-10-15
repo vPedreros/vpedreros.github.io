@@ -1,208 +1,128 @@
 ---
 layout: base
-title: "Teaching"
-description: "Pedagogical materials, auxiliary lecture guides, evaluations, and teaching archives."
+title: "About"
+description: "Cosmology, simulations, dark energy, and modified gravity. PhD student in Astrophysics at QUT."
 ---
 <div class="page-bg"></div>
 {% include nav.html %}
 
-<main class="project-home" id="main-content">
+<main class="about-home" id="main-content">
   <header class="home-hero">
     <h1 aria-label="{{ site.data.profile.name | default: site.title }}" translate="no">{{ site.data.profile.name | default: site.title }}</h1>
     <p class="home-hero__tagline">{{ site.tagline }}</p>
   </header>
 
-  {% assign t = site.data.teaching %}
+  {% assign p = site.data.profile %}
 
-  <section class="project-index" id="teaching" aria-labelledby="teaching-title">
+  <section class="about-card" id="about" aria-labelledby="about-title">
     <span id="project-index" hidden aria-hidden="true"></span>
-    <div class="project-index__header">
-      <h2 id="teaching-title">Teaching</h2>
-    </div>
+    <span id="teaching" hidden aria-hidden="true"></span>
 
-    <div class="project-tabs" role="tablist" aria-label="Teaching categories">
-      <button
-        type="button"
-        class="project-tab active"
-        role="tab"
-        aria-selected="true"
-        aria-controls="undergrad-panel"
-        id="undergrad-tab"
-        data-target="undergrad-panel"
-      >
-        <span class="project-tab__number" aria-hidden="true">01</span> Undergraduate Courses
-      </button>
-      <button
-        type="button"
-        class="project-tab"
-        role="tab"
-        aria-selected="false"
-        tabindex="-1"
-        aria-controls="grad-panel"
-        id="grad-tab"
-        data-target="grad-panel"
-      >
-        <span class="project-tab__number" aria-hidden="true">02</span> Advanced & Postgraduate
-      </button>
-      <button
-        type="button"
-        class="project-tab"
-        role="tab"
-        aria-selected="false"
-        tabindex="-1"
-        aria-controls="resources-panel"
-        id="resources-tab"
-        data-target="resources-panel"
-      >
-        <span class="project-tab__number" aria-hidden="true">03</span> Repositories & LaTeX
-      </button>
-    </div>
-
-    <section class="project-panel" id="undergrad-panel" role="tabpanel" aria-labelledby="undergrad-tab">
-      <div class="project-list">
-        {% for course in t.undergraduate %}
-        <article class="project-entry project-entry--completed">
-          <div class="project-entry__row">
-            <span class="project-entry__index" aria-hidden="true">0{{ forloop.index }}</span>
-            <h3 class="project-entry__title">
-              <a href="{{ course.github_path }}" class="project-entry__title-link" target="_blank" rel="noopener">
-                <span class="project-entry__title-text">{{ course.code }} — {{ course.title }} ({{ course.title_es }})</span><span class="project-entry__arrow" aria-hidden="true">→</span>
-              </a>
-            </h3>
-            <span class="project-entry__status project-entry__status--completed">
-              {{ course.role }}
-            </span>
+    <div class="about-content">
+      <!-- Profile -->
+      <div class="about-profile">
+        {% if p.avatar %}
+        <img class="about-avatar" src="{{ p.avatar | relative_url }}" alt="{{ p.name }}">
+        {% else %}
+        <span class="about-avatar" aria-hidden="true"><i class="fas fa-user"></i></span>
+        {% endif %}
+        <div class="about-identity">
+          <h2 id="about-title">{{ p.name }}</h2>
+          {% if p.keywords %}
+          <div class="about-identity__keywords" aria-label="Research keywords">
+            {% for kw in p.keywords %}
+            <span class="about-keyword">{{ kw }}</span>
+            {% endfor %}
           </div>
+          {% endif %}
+          <p class="about-identity__affiliation">
+            {{ p.program }}<br>
+            {{ p.institution }}
+          </p>
+          {% if p.status %}
+          <p class="about-identity__status">{{ p.status }}</p>
+          {% endif %}
+        </div>
+      </div>
 
-          <p class="project-entry__description">{{ course.description }}</p>
+      <!-- Research Interests -->
+      <div class="about-section">
+        <h3 class="section-title">My Academic Profile</h3>
+        <div class="section-content">
+          <p>My research focuses on studying the accelerated expansion of the universe. I am particularly interested how this can be understood as the inclusion of a new species called Dark Energy, that amounts to ~70% of energy budget of the universe. Alternatively, this can be thought of as a modification of our current understanding of gravity, which may behave differently on the largest scales, where the environment is particularly diffuse. To accomplish this, I am very interested in using computational and statistical tools.</p>
 
-          <a class="project-entry__paper" href="{{ course.github_path }}" target="_blank" rel="noopener">
-            Semesters: {{ course.semesters }} <span aria-hidden="true">↗</span>
-          </a>
-
-          <ul class="project-entry__tags" aria-label="Course topics">
-            {% for topic in course.topics limit: 4 %}
-              <li>{{ topic }}</li>
+          {% if p.research.physics and p.research.physics.size > 0 %}
+          <p><strong>Physics</strong></p>
+          <ul>
+            {% for item in p.research.physics %}
+            <li>{{ item }}</li>
             {% endfor %}
           </ul>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
+          {% endif %}
 
-    <section class="project-panel" id="grad-panel" role="tabpanel" aria-labelledby="grad-tab" hidden>
-      <div class="project-list">
-        {% for course in t.postgraduate %}
-        <article class="project-entry project-entry--completed">
-          <div class="project-entry__row">
-            <span class="project-entry__index" aria-hidden="true">0{{ forloop.index }}</span>
-            <h3 class="project-entry__title">
-              <a href="{{ course.github_path }}" class="project-entry__title-link" target="_blank" rel="noopener">
-                <span class="project-entry__title-text">{{ course.code }} — {{ course.title }} ({{ course.title_es }})</span><span class="project-entry__arrow" aria-hidden="true">→</span>
-              </a>
-            </h3>
-            <span class="project-entry__status project-entry__status--completed">
-              {{ course.role }}
-            </span>
-          </div>
-
-          <p class="project-entry__description">{{ course.description }}</p>
-
-          <a class="project-entry__paper" href="{{ course.github_path }}" target="_blank" rel="noopener">
-            Semesters: {{ course.semesters }} <span aria-hidden="true">↗</span>
-          </a>
-
-          <ul class="project-entry__tags" aria-label="Course topics">
-            {% for topic in course.topics limit: 4 %}
-              <li>{{ topic }}</li>
+          {% if p.research.ml and p.research.ml.size > 0 %}
+          <p><strong>Machine Learning</strong></p>
+          <ul>
+            {% for item in p.research.ml %}
+            <li>{{ item }}</li>
             {% endfor %}
           </ul>
-        </article>
-        {% endfor %}
+          {% endif %}
+        </div>
       </div>
-    </section>
 
-    <section class="project-panel" id="resources-panel" role="tabpanel" aria-labelledby="resources-tab" hidden>
-      <div class="project-list">
-        <article class="project-entry project-entry--completed">
-          <div class="project-entry__row">
-            <span class="project-entry__index" aria-hidden="true">01</span>
-            <h3 class="project-entry__title">
-              <a href="{{ t.repository_url }}" class="project-entry__title-link" target="_blank" rel="noopener">
-                <span class="project-entry__title-text">Material Docente — Central GitHub Archive</span><span class="project-entry__arrow" aria-hidden="true">→</span>
-              </a>
-            </h3>
-            <span class="project-entry__status project-entry__status--completed">Open Source</span>
-          </div>
-          <p class="project-entry__description">
-            Complete institutional LaTeX templates, auxiliary lecture companion problem sets, quizzes, exams, and pedagogical materials created for courses at Universidad de Chile (FCFM).
-          </p>
-          <a class="project-entry__paper" href="{{ t.repository_url }}" target="_blank" rel="noopener">
-            github.com/vpedreros/docencia <span aria-hidden="true">↗</span>
-          </a>
-          <ul class="project-entry__tags" aria-label="Topics">
-            <li>LaTeX</li>
-            <li>FCFM</li>
-            <li>Universidad de Chile</li>
-            <li>CC BY-NC-SA 4.0</li>
+      <!-- Publications -->
+      <div class="about-section">
+        <h3 class="section-title" id="publications">Publications</h3>
+        <div class="section-content">
+          <ul class="publication-list">
+            {% for pub in p.publications %}
+            <li class="publication-entry">
+              <span class="publication-entry__title">
+                {% if pub.url and pub.url != "" and pub.url != "In prep." and pub.url contains "://" %}
+                  <a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+                {% else %}
+                  {{ pub.title }}
+                {% endif %}
+              </span>
+              <span class="publication-entry__meta">{{ pub.authors }} — {{ pub.venue }} ({{ pub.year }}){% if pub.url == "In prep." %} · <em>In prep.</em>{% endif %}</span>
+            </li>
+            {% endfor %}
           </ul>
-        </article>
-
-        <article class="project-entry project-entry--completed">
-          <div class="project-entry__row">
-            <span class="project-entry__index" aria-hidden="true">02</span>
-            <h3 class="project-entry__title">
-              <a href="{{ t.overleaf_url }}" class="project-entry__title-link" target="_blank" rel="noopener">
-                <span class="project-entry__title-text">Overleaf Integration & Ready-to-Compile Projects</span><span class="project-entry__arrow" aria-hidden="true">→</span>
-              </a>
-            </h3>
-            <span class="project-entry__status project-entry__status--completed">Online Ready</span>
-          </div>
-          <p class="project-entry__description">
-            Directly synced with Overleaf, allowing students and educators to open, preview, and compile lecture templates and problem sheets in the cloud.
-          </p>
-          <a class="project-entry__paper" href="{{ t.overleaf_url }}" target="_blank" rel="noopener">
-            Open in Overleaf <span aria-hidden="true">↗</span>
-          </a>
-          <ul class="project-entry__tags" aria-label="Topics">
-            <li>Overleaf</li>
-            <li>TeX</li>
-            <li>Templates</li>
-          </ul>
-        </article>
+        </div>
       </div>
-    </section>
+
+      <!-- Contact / CV -->
+      <div class="about-section">
+        <h3 class="section-title">Contact</h3>
+        <div class="section-content">
+          <p>I am happy to receive an email and share any ideas and potential collaborations. Beyond my academic interests I am a music nerd, and really enjoy outdoor activities like hiking and cycling.</p>
+
+          <ul class="about-links">
+            {% if p.social.github %}
+            <li><a href="{{ p.social.github }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+            {% endif %}
+            {% if p.social.linkedin %}
+            <li><a href="{{ p.social.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+            {% endif %}
+            {% if p.email %}
+            <li><a href="mailto:{{ p.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
+            {% endif %}
+            {% if p.social.lastfm or p.social.last_fm or p.social['last.fm'] %}
+            <li><a href="{{ p.social.lastfm | default: p.social.last_fm | default: p.social['last.fm'] }}" target="_blank" rel="noopener"><i class="fab fa-lastfm" aria-hidden="true"></i> Last.fm</a></li>
+            {% endif %}
+            {% if p.social.instagram %}
+            <li><a href="{{ p.social.instagram }}" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            {% endif %}
+          </ul>
+
+          {% if p.cv_url and p.cv_url != "" %}
+          <a href="{{ p.cv_url }}" class="about-cv-link" target="_blank">
+            <i class="fas fa-download" aria-hidden="true"></i> Download academic CV (PDF)
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </section>
 </main>
-
-<script>
-  (function () {
-    var tabs = Array.from(document.querySelectorAll('.project-tab'));
-    var panels = Array.from(document.querySelectorAll('.project-panel'));
-
-    function activate(tab) {
-      tabs.forEach(function (t) {
-        var selected = t === tab;
-        t.classList.toggle('active', selected);
-        t.setAttribute('aria-selected', selected);
-        t.tabIndex = selected ? 0 : -1;
-      });
-      panels.forEach(function (panel) {
-        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
-      });
-    }
-
-    tabs.forEach(function (tab, i) {
-      tab.addEventListener('click', function () {
-        activate(tab);
-      });
-      tab.addEventListener('keydown', function (e) {
-        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-        e.preventDefault();
-        var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-        next.focus();
-        activate(next);
-      });
-    });
-  })();
-</script>
