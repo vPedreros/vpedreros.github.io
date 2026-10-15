@@ -30,14 +30,9 @@ research:
     - "Computation: CLASS, N-body simulations, emulators, HPC"
 
 # --- Publications ---
-# publications:
-#   - title: "Geometric additivity of the modular commutator for multipartite entanglement"
-#     authors: "Sung-Min Park, Isaac H. Kim, and Eun-Gook Moon"
-#     venue: "Physical Review B 111, 075167"
-#     year: "2025"
-#     url: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.075167"
-#   - title: "Spin-orbit-induced Instability and Finite-Temperature Stabilization of a Triangular-lattice Supersolid"
-#     authors: "Seongjun Park, Sung-Min Park, Yun-Tak Oh, Hyun-Yong Lee, and Eun-Gook Moon"
-#     venue: "arXiv:2601.20963"
-#     year: "2026"
-#     url: "https://arxiv.org/abs/2601.20963"
+publications:
+  - title: "Quantifying the SNR of imprints of the frame-dragging potential in modified gravity scenarios"
+    authors: "Vicente Pedreros Aballay, Cristian Barrera-Hinojosa, Domenico Sapone and Baojiu Li"
+    venue: "MNRAS"
+    year: "2026"
+    url: "In prep."

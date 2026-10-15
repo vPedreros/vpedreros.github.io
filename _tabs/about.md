@@ -29,9 +29,9 @@ description: "Background, research interests, and contact"
 
   <!-- Research Interests -->
   <div class="about-section">
-    <h3 class="section-title">research philosophy and interests</h3>
+    <h3 class="section-title">My academic profile</h3>
     <div class="section-content">
-      <p>My research interests lie at the fascinating intersection of <strong>physics</strong> and <strong>machine learning</strong>, where I explore how computational methods can unlock new insights into complex quantum systems. I believe the most exciting discoveries happen at the boundaries between disciplines — by combining the rigor of physics with the power of modern computational tools, we can tackle problems that were previously intractable and gain new perspectives on fundamental questions about nature.</p>
+      <p>My research focuses on studying the accelerated expansion of the universe. I am particularly interested how this can be understood as the inclusion of a new species called Dark Energy, that amounts to ~70% of energy budget of the universe. Alternatively, this can be thought of as a modification of our current understanding of gravity, which may behave differently on the largest scales, where the environment is particularly diffuse. To accomplish this, I am very interested in using computational and statistical tools. </p>
 
       <p><strong>Physics</strong></p>
       <ul>
@@ -51,7 +51,7 @@ description: "Background, research interests, and contact"
 
   <!-- Publications -->
   <div class="about-section">
-    <h3 class="section-title" id="publications">publications</h3>
+    <h3 class="section-title" id="publications">Publications</h3>
     <div class="section-content">
       <ul class="publication-list">
         {% for pub in p.publications %}
@@ -68,9 +68,9 @@ description: "Background, research interests, and contact"
 
   <!-- Contact / CV -->
   <div class="about-section">
-    <h3 class="section-title">contact</h3>
+    <h3 class="section-title">Contact</h3>
     <div class="section-content">
-      <p>Feel free to reach out if you have questions, collaboration ideas, or just want to chat about physics, machine learning, or anything in between! Beyond research, I enjoy traveling — the glacier above is from a trip to Iceland.</p>
+      <p>I am happy to recieve an emal and share any ideas and potential collaborations. Beyond my academic interests I am a music nerd, and really enjoy outdoors acitivities like hiking and cycling.</p>
 
       <ul class="about-links">
         {% if p.social.github %}
@@ -89,7 +89,7 @@ description: "Background, research interests, and contact"
 
       {% if p.cv_url != "" %}
       <a href="{{ p.cv_url }}" class="about-cv-link" target="_blank">
-        <i class="fas fa-download" aria-hidden="true"></i> Download CV (PDF)
+        <i class="fas fa-download" aria-hidden="true"></i> Download academic CV (PDF)
       </a>
       {% endif %}
     </div>
