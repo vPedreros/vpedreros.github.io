@@ -1,0 +1,57 @@
+# =====================================================
+# Teaching & Course Materials
+# =====================================================
+# Maintained by Vicente Pedreros Aballay
+# Repository: https://github.com/vpedreros/docencia
+# =====================================================
+
+repository_url: "https://github.com/vpedreros/docencia"
+overleaf_url: "https://www.overleaf.com/read/gzktmvgyyqnw#d49cd1"
+institution: "Departamento de Física (DFI), FCFM, Universidad de Chile"
+
+undergraduate:
+  - code: "FI2002"
+    title: "Electromagnetism"
+    title_es: "Electromagnetismo"
+    role: "Teaching Assistant"
+    level: "Undergraduate (Pregrado)"
+    semesters: "2023-1, 2023-2, 2024-2, 2026-Verano"
+    description: "Course materials, problem sets, exam reviews, quizzes, and comprehensive formula sheets for the undergraduate physics sequence."
+    topics:
+      - "Electrostatics"
+      - "Magnetostatics"
+      - "Maxwell's Equations"
+      - "Electromagnetic Waves"
+    github_path: "https://github.com/vpedreros/docencia/tree/main/Electromagnetismo"
+    status: "completed"
+
+  - code: "FI3104"
+    title: "Classical Electrodynamics"
+    title_es: "Electrodinámica"
+    role: "Teaching Assistant"
+    level: "Advanced Undergraduate"
+    semesters: "2024-1, 2025-1"
+    description: "Complete pedagogical material, lecture companion guides, and solutions for the Classical Electrodynamics course."
+    topics:
+      - "Special Relativity"
+      - "Radiation & Potentials"
+      - "Covariant Formulation"
+      - "Waveguides"
+    github_path: "https://github.com/vpedreros/docencia/tree/main/Electrodina%CC%81mica"
+    status: "completed"
+
+postgraduate:
+  - code: "FI7015"
+    title: "Cosmology"
+    title_es: "Cosmología"
+    role: "Teaching Assistant"
+    level: "Graduate & Advanced Undergraduate"
+    semesters: "2024-2"
+    description: "Graduate-level problem sets and thematic lecture notes on the Cosmic Microwave Background (CMB) and cosmological statistics."
+    topics:
+      - "Friedmann Equations"
+      - "Perturbation Theory"
+      - "Cosmic Microwave Background (CMB)"
+      - "Cosmological Statistics"
+    github_path: "https://github.com/vpedreros/docencia/tree/main/Cosmologi%CC%81a"
+    status: "completed"

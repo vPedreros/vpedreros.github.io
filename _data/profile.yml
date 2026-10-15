@@ -8,6 +8,13 @@
 # --- Identity ---
 name: "Vicente K. Pedreros Aballay"
 avatar: /assets/img/common/conceps.jpeg
+keywords:
+  - "Cosmology"
+  - "Large-Scale Structure"
+  - "Dark Energy"
+  - "Modified Gravity"
+  - "Simulations"
+  - "Astrophysics"
 
 # --- Affiliation ---
 program: "PhD in Astrophysics"
@@ -21,8 +28,8 @@ cv_url: "/assets/files/CV.pdf"
 # --- Social Links ---
 social:
   github: "https://github.com/vpedreros"
-  last.fm: "https://www.last.fm/user/vpedreros"
-  lastfm: "https://www.last.fm/user/vpedreros"
+  last.fm: "https://www.last.fm/user/vPedre"
+  lastfm: "https://www.last.fm/user/vPedre"
 
 # --- Research Interests ---
 research:

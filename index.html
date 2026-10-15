@@ -1,7 +1,7 @@
 ---
 layout: base
-title: "projects"
-description: "Research implementations, and the software and design systems built alongside them."
+title: "Teaching"
+description: "Pedagogical materials, auxiliary lecture guides, evaluations, and teaching archives."
 ---
 <div class="page-bg"></div>
 {% include nav.html %}
@@ -12,35 +12,24 @@ description: "Research implementations, and the software and design systems buil
     <p class="home-hero__tagline">{{ site.tagline }}</p>
   </header>
 
-  {% assign physics_projects = site.projects | where: 'project_type', 'physics' | sort: 'order' %}
-  {% assign software_projects = site.projects | where: 'project_type', 'software' | sort: 'order' %}
-  {%- comment -%}
-    Reserved third category: project_type value "ml" (applied ML / signal
-    processing), for once a project is ready to publish. No tab or panel
-    exists for it yet — when the first entry is ready, add a third
-    project-tab / project-panel pair here following the physics/software
-    pattern above (ids ml-tab / ml-panel, number "03"), plus a matching
-    assign line for the filtered project list. The tab-switch script below
-    is generic over every project-tab / project-panel element, so no JS
-    change is needed.
-  {%- endcomment -%}
+  {% assign t = site.data.teaching %}
 
-  <section class="project-index" id="project-index" aria-labelledby="project-index-title">
+  <section class="project-index" id="teaching" aria-labelledby="teaching-title">
     <div class="project-index__header">
-      <h2 id="project-index-title">projects</h2>
+      <h2 id="teaching-title">Teaching</h2>
     </div>
 
-    <div class="project-tabs" role="tablist" aria-label="Project categories">
+    <div class="project-tabs" role="tablist" aria-label="Teaching categories">
       <button
         type="button"
         class="project-tab active"
         role="tab"
         aria-selected="true"
-        aria-controls="physics-panel"
-        id="physics-tab"
-        data-target="physics-panel"
+        aria-controls="undergrad-panel"
+        id="undergrad-tab"
+        data-target="undergrad-panel"
       >
-        <span class="project-tab__number" aria-hidden="true">01</span> astrophysics & cosmology
+        <span class="project-tab__number" aria-hidden="true">01</span> Undergraduate Courses
       </button>
       <button
         type="button"
@@ -48,35 +37,138 @@ description: "Research implementations, and the software and design systems buil
         role="tab"
         aria-selected="false"
         tabindex="-1"
-        aria-controls="software-panel"
-        id="software-tab"
-        data-target="software-panel"
+        aria-controls="grad-panel"
+        id="grad-tab"
+        data-target="grad-panel"
       >
-        <span class="project-tab__number" aria-hidden="true">02</span> software development
+        <span class="project-tab__number" aria-hidden="true">02</span> Advanced & Postgraduate
+      </button>
+      <button
+        type="button"
+        class="project-tab"
+        role="tab"
+        aria-selected="false"
+        tabindex="-1"
+        aria-controls="resources-panel"
+        id="resources-tab"
+        data-target="resources-panel"
+      >
+        <span class="project-tab__number" aria-hidden="true">03</span> Repositories & LaTeX
       </button>
     </div>
 
-    <section class="project-panel" id="physics-panel" role="tabpanel" aria-labelledby="physics-tab">
+    <section class="project-panel" id="undergrad-panel" role="tabpanel" aria-labelledby="undergrad-tab">
       <div class="project-list">
-        {% for project in physics_projects %}
-          {%
-            include project-card.html
-            project=project
-            index=forloop.index
-          %}
+        {% for course in t.undergraduate %}
+        <article class="project-entry project-entry--completed">
+          <div class="project-entry__row">
+            <span class="project-entry__index" aria-hidden="true">0{{ forloop.index }}</span>
+            <h3 class="project-entry__title">
+              <a href="{{ course.github_path }}" class="project-entry__title-link" target="_blank" rel="noopener">
+                <span class="project-entry__title-text">{{ course.code }} — {{ course.title }} ({{ course.title_es }})</span><span class="project-entry__arrow" aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <span class="project-entry__status project-entry__status--completed">
+              {{ course.role }}
+            </span>
+          </div>
+
+          <p class="project-entry__description">{{ course.description }}</p>
+
+          <a class="project-entry__paper" href="{{ course.github_path }}" target="_blank" rel="noopener">
+            Semesters: {{ course.semesters }} <span aria-hidden="true">↗</span>
+          </a>
+
+          <ul class="project-entry__tags" aria-label="Course topics">
+            {% for topic in course.topics limit: 4 %}
+              <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+        </article>
         {% endfor %}
       </div>
     </section>
 
-    <section class="project-panel" id="software-panel" role="tabpanel" aria-labelledby="software-tab" hidden>
+    <section class="project-panel" id="grad-panel" role="tabpanel" aria-labelledby="grad-tab" hidden>
       <div class="project-list">
-        {% for project in software_projects %}
-          {%
-            include project-card.html
-            project=project
-            index=forloop.index
-          %}
+        {% for course in t.postgraduate %}
+        <article class="project-entry project-entry--completed">
+          <div class="project-entry__row">
+            <span class="project-entry__index" aria-hidden="true">0{{ forloop.index }}</span>
+            <h3 class="project-entry__title">
+              <a href="{{ course.github_path }}" class="project-entry__title-link" target="_blank" rel="noopener">
+                <span class="project-entry__title-text">{{ course.code }} — {{ course.title }} ({{ course.title_es }})</span><span class="project-entry__arrow" aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <span class="project-entry__status project-entry__status--completed">
+              {{ course.role }}
+            </span>
+          </div>
+
+          <p class="project-entry__description">{{ course.description }}</p>
+
+          <a class="project-entry__paper" href="{{ course.github_path }}" target="_blank" rel="noopener">
+            Semesters: {{ course.semesters }} <span aria-hidden="true">↗</span>
+          </a>
+
+          <ul class="project-entry__tags" aria-label="Course topics">
+            {% for topic in course.topics limit: 4 %}
+              <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+        </article>
         {% endfor %}
+      </div>
+    </section>
+
+    <section class="project-panel" id="resources-panel" role="tabpanel" aria-labelledby="resources-tab" hidden>
+      <div class="project-list">
+        <article class="project-entry project-entry--completed">
+          <div class="project-entry__row">
+            <span class="project-entry__index" aria-hidden="true">01</span>
+            <h3 class="project-entry__title">
+              <a href="{{ t.repository_url }}" class="project-entry__title-link" target="_blank" rel="noopener">
+                <span class="project-entry__title-text">Material Docente — Central GitHub Archive</span><span class="project-entry__arrow" aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <span class="project-entry__status project-entry__status--completed">Open Source</span>
+          </div>
+          <p class="project-entry__description">
+            Complete institutional LaTeX templates, auxiliary lecture companion problem sets, quizzes, exams, and pedagogical materials created for courses at Universidad de Chile (FCFM).
+          </p>
+          <a class="project-entry__paper" href="{{ t.repository_url }}" target="_blank" rel="noopener">
+            github.com/vpedreros/docencia <span aria-hidden="true">↗</span>
+          </a>
+          <ul class="project-entry__tags" aria-label="Topics">
+            <li>LaTeX</li>
+            <li>FCFM</li>
+            <li>Universidad de Chile</li>
+            <li>CC BY-NC-SA 4.0</li>
+          </ul>
+        </article>
+
+        <article class="project-entry project-entry--completed">
+          <div class="project-entry__row">
+            <span class="project-entry__index" aria-hidden="true">02</span>
+            <h3 class="project-entry__title">
+              <a href="{{ t.overleaf_url }}" class="project-entry__title-link" target="_blank" rel="noopener">
+                <span class="project-entry__title-text">Overleaf Integration & Ready-to-Compile Projects</span><span class="project-entry__arrow" aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <span class="project-entry__status project-entry__status--completed">Online Ready</span>
+          </div>
+          <p class="project-entry__description">
+            Directly synced with Overleaf, allowing students and educators to open, preview, and compile lecture templates and problem sheets in the cloud.
+          </p>
+          <a class="project-entry__paper" href="{{ t.overleaf_url }}" target="_blank" rel="noopener">
+            Open in Overleaf <span aria-hidden="true">↗</span>
+          </a>
+          <ul class="project-entry__tags" aria-label="Topics">
+            <li>Overleaf</li>
+            <li>TeX</li>
+            <li>Templates</li>
+          </ul>
+        </article>
       </div>
     </section>
   </section>

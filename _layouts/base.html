@@ -140,8 +140,8 @@
         // The homepage rail starts as a light optical trace and strengthens
         // once the reader moves from the open environment into content.
         if (topNav && topNav.dataset.navContext === 'hero') {
-          var projectIndex = document.getElementById('project-index');
-          var projectsLink = topNav.querySelector('[data-nav-section="projects"]');
+          var teachingSection = document.getElementById('teaching');
+          var teachingLink = topNav.querySelector('[data-nav-section="teaching"]');
           var logo = document.getElementById('nav-logo');
           var logoSection = document.getElementById('logo-section');
           var contentThreshold = 48;
@@ -152,8 +152,8 @@
               || 0;
           };
           var updateNavThreshold = function() {
-            if (!projectIndex) return;
-            contentThreshold = projectIndex.getBoundingClientRect().top
+            if (!teachingSection) return;
+            contentThreshold = teachingSection.getBoundingClientRect().top
               + getScrollTop()
               - topNav.offsetHeight
               - 24;
@@ -161,18 +161,18 @@
           var updateNavSurface = function() {
             var inContent = getScrollTop() >= contentThreshold;
             topNav.classList.toggle('top-nav--scrolled', inContent);
-            if (projectsLink) {
-              projectsLink.classList.toggle('active', inContent);
+            if (teachingLink) {
+              teachingLink.classList.toggle('active', inContent);
               if (inContent) {
-                projectsLink.setAttribute('aria-current', 'location');
+                teachingLink.setAttribute('aria-current', 'location');
               } else {
-                projectsLink.removeAttribute('aria-current');
+                teachingLink.removeAttribute('aria-current');
               }
             }
             if (logoSection) logoSection.hidden = !inContent;
             if (logo) {
               var ownerName = {{ site.data.profile.name | default: site.title | jsonify }};
-              logo.setAttribute('aria-label', inContent ? (ownerName + ' — projects') : (ownerName + ' home'));
+              logo.setAttribute('aria-label', inContent ? (ownerName + ' — Teaching') : (ownerName + ' Home'));
             }
           };
           updateNavThreshold();

@@ -2,7 +2,7 @@
 title: About
 layout: custom-page
 icon: fas fa-info-circle
-order: 4
+order: 3
 permalink: /about/
 slug: about
 description: "Background, research interests, and contact"
@@ -20,8 +20,12 @@ description: "Background, research interests, and contact"
     {% endif %}
     <div class="about-identity">
       <h2>{{ p.name }}</h2>
-      {% if p.name_ko %}
-      <p class="about-identity__ko">{{ p.name_ko }}</p>
+      {% if p.keywords %}
+      <div class="about-identity__keywords" aria-label="Research keywords">
+        {% for kw in p.keywords %}
+        <span class="about-keyword">{{ kw }}</span>
+        {% endfor %}
+      </div>
       {% endif %}
       <p class="about-identity__affiliation">
         {{ p.program }}<br>
@@ -35,7 +39,7 @@ description: "Background, research interests, and contact"
 
   <!-- Research Interests -->
   <div class="about-section">
-    <h3 class="section-title">My academic profile</h3>
+    <h3 class="section-title">My Academic Profile</h3>
     <div class="section-content">
       <p>My research focuses on studying the accelerated expansion of the universe. I am particularly interested how this can be understood as the inclusion of a new species called Dark Energy, that amounts to ~70% of energy budget of the universe. Alternatively, this can be thought of as a modification of our current understanding of gravity, which may behave differently on the largest scales, where the environment is particularly diffuse. To accomplish this, I am very interested in using computational and statistical tools.</p>
 

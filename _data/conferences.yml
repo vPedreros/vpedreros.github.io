@@ -1,0 +1,47 @@
+# =====================================================
+# Conferences, Workshops & Schools
+# =====================================================
+# Add events and photos here. They will automatically
+# render on the Conferences page (/conferences/).
+#
+# To add your photos:
+# 1. Place your image in assets/img/conferences/
+# 2. Add an entry under the corresponding event's photos:
+#    - src: "/assets/img/conferences/your-photo.jpg"
+#      caption: "Description of the photo"
+# =====================================================
+
+categories:
+  - id: "all"
+    name: "All Events"
+  - id: "conferences"
+    name: "Conferences"
+  - id: "workshops"
+    name: "Workshops"
+  - id: "schools"
+    name: "Schools"
+
+events:
+  - title: "QUT Astrophysics & Cosmology Workshop"
+    category: "workshops"
+    type: "Workshop"
+    location: "Brisbane, Australia"
+    year: "2026"
+    description: "Presentations and collaboration discussions on modified gravity, cosmological perturbation theory, and relativistic frame-dragging signatures."
+    photos: []
+
+  - title: "Cosmology & Computational Astrophysics School"
+    category: "schools"
+    type: "Summer School"
+    location: "Australia"
+    year: "2025"
+    description: "Advanced lectures and intensive hands-on sessions on cosmological N-body simulations, Boltzmann solvers, and dark energy phenomenology."
+    photos: []
+
+  - title: "FCFM Physics Colloquium & Research Gathering"
+    category: "conferences"
+    type: "Conference"
+    location: "Santiago, Chile"
+    year: "2024"
+    description: "Departmental meeting presenting research progress on vector perturbations and large-scale structure observables."
+    photos: []

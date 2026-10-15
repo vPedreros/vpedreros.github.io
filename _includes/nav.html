@@ -4,24 +4,25 @@
   aria-label="Primary"
 >
   {% assign nav_name = site.data.profile.name | default: site.title %}
-  {% if page.collection == "projects" %}
-  <a href="/#project-index" class="logo" aria-label="{{ nav_name }} — back to projects" translate="no">
-    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  {% if page.url contains "/conferences" or page.slug == "conferences" %}
+  <a href="/conferences/" class="logo" aria-label="{{ nav_name }} — Conferences" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>Conferences</span>
   </a>
-  {% elsif page.url contains "/about" %}
-  <a href="/about/" class="logo" aria-label="{{ nav_name }} — about" translate="no">
-    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>about</span>
+  {% elsif page.url contains "/about" or page.slug == "about" %}
+  <a href="/about/" class="logo" aria-label="{{ nav_name }} — About" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section"><span class="logo__sep" aria-hidden="true">|</span>About</span>
   </a>
-  {% elsif page.url == "/" %}
-  <a href="/" class="logo" id="nav-logo" aria-label="{{ nav_name }} home" translate="no">
-    <span class="logo__name">{{ nav_name }}</span><span class="logo__section" id="logo-section" hidden><span class="logo__sep" aria-hidden="true">|</span>projects</span>
+  {% elsif page.url == "/" or page.slug == "teaching" %}
+  <a href="/" class="logo" id="nav-logo" aria-label="{{ nav_name }} Home" translate="no">
+    <span class="logo__name">{{ nav_name }}</span><span class="logo__section" id="logo-section" hidden><span class="logo__sep" aria-hidden="true">|</span>Teaching</span>
   </a>
   {% else %}
-  <a href="/" class="logo" aria-label="{{ nav_name }} home" translate="no">{{ nav_name }}</a>
+  <a href="/" class="logo" aria-label="{{ nav_name }} Home" translate="no">{{ nav_name }}</a>
   {% endif %}
   <div class="nav-links" id="primary-nav" translate="no">
-    <a href="/#project-index" data-nav-section="projects"{% if page.collection == 'projects' %} class="active" aria-current="location"{% endif %}>projects</a>
-    <a href="/about/"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>about</a>
+    <a href="/#teaching" data-nav-section="teaching"{% if page.url == '/' or page.slug == 'teaching' %} class="active"{% endif %}>Teaching</a>
+    <a href="/conferences/"{% if page.url contains '/conferences' or page.slug == 'conferences' %} class="active" aria-current="page"{% endif %}>Conferences</a>
+    <a href="/about/"{% if page.url contains '/about' or page.slug == 'about' %} class="active" aria-current="page"{% endif %}>About</a>
   </div>
   <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
     <i class="fas fa-sun" id="theme-icon" aria-hidden="true"></i>
